@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
@@ -13,7 +12,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function GetQuotesPage() {
+type Props = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export default async function GetQuotesPage({ searchParams }: Props) {
+  const params = await searchParams;
+  const initialCity = (params.city as string) || (params.zip as string) || "";
+
   return (
     <>
       <Header />
@@ -29,12 +35,9 @@ export default function GetQuotesPage() {
             </p>
           </div>
 
-          <Suspense fallback={<div className="mt-10 text-center text-sm text-[var(--color-text-light)]">Loading form...</div>}>
-            <QuoteForm />
-          </Suspense>
+          <QuoteForm initialCity={initialCity} />
         </div>
 
-        {/* Schema markup */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import Calculator from "@/components/Calculator";
 import { ArrowRight, CloudLightning, Clock, AlertTriangle } from "lucide-react";
 import statesData from "@/data/states.json";
-import citiesData from "@/data/cities.json";
+import citiesFullData from "@/data/cities-full.json";
 
 interface StateData {
   state: string;
@@ -54,10 +54,11 @@ export default async function StatePage({ params }: Props) {
   const s = getState(slug);
   if (!s) notFound();
 
-  const citySlugs = new Set(
-    citiesData
+  // Only cities with full published pages get links
+  const publishedCitySlugs = new Set(
+    citiesFullData
       .filter((c) => c.stateSlug === s.slug)
-      .map((c) => c.city)
+      .map((c) => c.slug)
   );
 
   const faq = [
@@ -194,12 +195,13 @@ export default async function StatePage({ params }: Props) {
             </h2>
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {s.cities.map((cityName) => {
-                const hasPage = citySlugs.has(cityName);
+                const citySlug = cityName.toLowerCase().replace(/\s+/g, "-");
+                const hasPage = publishedCitySlugs.has(citySlug);
                 return hasPage ? (
                   <Link
                     key={cityName}
-                    href={`/generator-installation/${s.slug}/${cityName.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="flex items-center justify-between rounded-lg border border-[var(--color-border)] p-3 text-sm font-medium text-[var(--color-text-dark)] transition-colors hover:border-[var(--color-primary-cyan)] hover:text-[var(--color-primary-cyan)]"
+                    href={`/generator-installation/${s.slug}/${citySlug}`}
+                    className="flex items-center justify-between rounded-lg border border-[var(--color-border)] bg-gradient-to-r from-[var(--color-primary-cyan)]/5 to-[var(--color-primary-mint)]/5 p-3 text-sm font-medium text-[var(--color-text-dark)] transition-colors hover:border-[var(--color-primary-cyan)] hover:from-[var(--color-primary-cyan)]/10 hover:to-[var(--color-primary-mint)]/10"
                   >
                     {cityName}
                     <ArrowRight size={14} />
@@ -207,7 +209,7 @@ export default async function StatePage({ params }: Props) {
                 ) : (
                   <span
                     key={cityName}
-                    className="rounded-lg border border-[var(--color-border)] p-3 text-sm text-[var(--color-text-light)]"
+                    className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-light)] p-3 text-sm text-[var(--color-text-light)]"
                   >
                     {cityName}
                   </span>

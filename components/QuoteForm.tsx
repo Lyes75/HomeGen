@@ -1,18 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
-import { Loader2, Lock } from "lucide-react";
+import { useState } from "react";
+import { Loader2, Lock, CheckCircle } from "lucide-react";
+import Link from "next/link";
 
-export default function QuoteForm() {
-  const searchParams = useSearchParams();
-  const router = useRouter();
+interface QuoteFormProps {
+  initialCity?: string;
+}
 
+export default function QuoteForm({ initialCity = "" }: QuoteFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    city: "",
+    city: initialCity,
     homeSize: "",
     generatorNeed: "",
     coverage: "",
@@ -21,14 +22,8 @@ export default function QuoteForm() {
     timeline: "",
   });
   const [submitting, setSubmitting] = useState(false);
-
-  useEffect(() => {
-    const city = searchParams.get("city") || "";
-    const zip = searchParams.get("zip") || "";
-    if (city || zip) {
-      setFormData((prev) => ({ ...prev, city: city || zip }));
-    }
-  }, [searchParams]);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -41,25 +36,51 @@ export default function QuoteForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
+    setError("");
 
     try {
       const res = await fetch("https://formspree.io/f/xjkwpgbz", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          submittedAt: new Date().toISOString(),
+        }),
       });
 
       if (res.ok) {
-        router.push("/get-quotes/thank-you");
+        setSubmitted(true);
       } else {
-        alert("Something went wrong. Please try again.");
-        setSubmitting(false);
+        setError("Something went wrong. Please try again.");
       }
     } catch {
-      alert("Something went wrong. Please try again.");
+      setError("Network error. Please check your connection and try again.");
+    } finally {
       setSubmitting(false);
     }
   };
+
+  if (submitted) {
+    return (
+      <div className="mt-10 rounded-2xl border border-[var(--color-border)] bg-white p-8 text-center shadow-sm sm:p-12">
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[var(--color-primary-cyan)]/10 to-[var(--color-primary-mint)]/10">
+          <CheckCircle size={36} className="text-[var(--color-success)]" />
+        </div>
+        <h2 className="mt-6 text-2xl font-bold text-[var(--color-text-dark)]">
+          Thank You! Your Quote Request Has Been Submitted.
+        </h2>
+        <p className="mt-4 text-[var(--color-text-body)]">
+          You&apos;ll hear from local installers within 24-48 hours.
+        </p>
+        <Link
+          href="/#guides"
+          className="btn-gradient mt-8 inline-block rounded-lg px-6 py-3 text-sm"
+        >
+          While You Wait, Check Our Buying Guides →
+        </Link>
+      </div>
+    );
+  }
 
   const inputClass =
     "w-full rounded-lg border border-[var(--color-border)] bg-white px-4 py-3 text-sm text-[var(--color-text-dark)] placeholder:text-[var(--color-text-light)] focus:border-[var(--color-primary-cyan)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-cyan)]/20";
@@ -72,7 +93,10 @@ export default function QuoteForm() {
       <div className="grid gap-5">
         {/* Full Name */}
         <div>
-          <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]">
+          <label
+            htmlFor="name"
+            className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]"
+          >
             Full Name <span className="text-red-500">*</span>
           </label>
           <input
@@ -90,7 +114,10 @@ export default function QuoteForm() {
         {/* Email & Phone */}
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
-            <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]">
+            <label
+              htmlFor="email"
+              className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]"
+            >
               Email <span className="text-red-500">*</span>
             </label>
             <input
@@ -105,7 +132,10 @@ export default function QuoteForm() {
             />
           </div>
           <div>
-            <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]">
+            <label
+              htmlFor="phone"
+              className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]"
+            >
               Phone <span className="text-red-500">*</span>
             </label>
             <input
@@ -124,7 +154,10 @@ export default function QuoteForm() {
         {/* City & Home Size */}
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
-            <label htmlFor="city" className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]">
+            <label
+              htmlFor="city"
+              className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]"
+            >
               City or ZIP Code <span className="text-red-500">*</span>
             </label>
             <input
@@ -139,7 +172,10 @@ export default function QuoteForm() {
             />
           </div>
           <div>
-            <label htmlFor="homeSize" className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]">
+            <label
+              htmlFor="homeSize"
+              className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]"
+            >
               Home Size (sq ft) <span className="text-red-500">*</span>
             </label>
             <input
@@ -157,8 +193,11 @@ export default function QuoteForm() {
 
         {/* Generator Need */}
         <div>
-          <label htmlFor="generatorNeed" className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]">
-            Generator Need <span className="text-red-500">*</span>
+          <label
+            htmlFor="generatorNeed"
+            className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]"
+          >
+            What Do You Need? <span className="text-red-500">*</span>
           </label>
           <select
             id="generatorNeed"
@@ -179,7 +218,10 @@ export default function QuoteForm() {
         {/* Coverage & Fuel */}
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
-            <label htmlFor="coverage" className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]">
+            <label
+              htmlFor="coverage"
+              className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]"
+            >
               Coverage
             </label>
             <select
@@ -195,7 +237,10 @@ export default function QuoteForm() {
             </select>
           </div>
           <div>
-            <label htmlFor="fuel" className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]">
+            <label
+              htmlFor="fuel"
+              className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]"
+            >
               Preferred Fuel Type
             </label>
             <select
@@ -216,7 +261,10 @@ export default function QuoteForm() {
 
         {/* Timeline */}
         <div>
-          <label htmlFor="timeline" className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]">
+          <label
+            htmlFor="timeline"
+            className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]"
+          >
             Timeline
           </label>
           <select
@@ -236,7 +284,10 @@ export default function QuoteForm() {
 
         {/* Notes */}
         <div>
-          <label htmlFor="notes" className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]">
+          <label
+            htmlFor="notes"
+            className="mb-1.5 block text-sm font-medium text-[var(--color-text-dark)]"
+          >
             Additional Notes
           </label>
           <textarea
@@ -249,6 +300,13 @@ export default function QuoteForm() {
             className={inputClass}
           />
         </div>
+
+        {/* Error message */}
+        {error && (
+          <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-600 border border-red-200">
+            {error}
+          </p>
+        )}
 
         {/* Submit */}
         <button

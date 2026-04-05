@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { Search, Globe, Award, DollarSign } from "lucide-react";
 import cities from "@/data/cities.json";
+import citiesFull from "@/data/cities-full.json";
 
 interface City {
   city: string;
@@ -21,6 +22,11 @@ export default function Hero() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
+
+  // Set of city slugs that have full published pages
+  const publishedCities = new Set(
+    citiesFull.map((c) => `${c.stateSlug}/${c.slug}`)
+  );
 
   // Debounced search
   useEffect(() => {
@@ -66,9 +72,14 @@ export default function Hero() {
     (city: City) => {
       setIsOpen(false);
       setQuery(`${city.city}, ${city.stateAbbr}`);
-      router.push(`/generator-installation/${city.stateSlug}`);
+      const cityPath = `${city.stateSlug}/${city.slug}`;
+      if (publishedCities.has(cityPath)) {
+        router.push(`/generator-installation/${cityPath}`);
+      } else {
+        router.push(`/generator-installation/${city.stateSlug}`);
+      }
     },
-    [router]
+    [router, publishedCities]
   );
 
   const handleSubmit = useCallback(() => {

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import statesData from "@/data/states.json";
+import citiesFullData from "@/data/cities-full.json";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const statePages = statesData.map((s) => ({
@@ -7,6 +8,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.8,
+  }));
+
+  const cityPages = citiesFullData.map((c) => ({
+    url: `https://homegen.co/generator-installation/${c.stateSlug}/${c.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
   }));
 
   return [
@@ -29,5 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     ...statePages,
+    ...cityPages,
   ];
 }
