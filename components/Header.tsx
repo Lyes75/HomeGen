@@ -6,10 +6,10 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Calculator", href: "#calculator" },
-  { label: "Cost Guide", href: "#guides" },
-  { label: "Brands", href: "#brands" },
-  { label: "Guides", href: "#guides" },
+  { label: "Calculator", href: "/#calculator" },
+  { label: "Cost Guide", href: "/#guides" },
+  { label: "States", href: "/states" },
+  { label: "Guides", href: "/#guides" },
 ];
 
 export default function Header() {
@@ -40,7 +40,7 @@ export default function Header() {
             </Link>
           ))}
           <Link
-            href="#cta"
+            href="/get-quotes"
             className="btn-gradient rounded-lg px-5 py-2.5 text-sm text-white"
           >
             Get Free Quotes
@@ -71,7 +71,7 @@ export default function Header() {
             </Link>
           ))}
           <Link
-            href="#cta"
+            href="/get-quotes"
             className="btn-gradient mt-2 block rounded-lg px-5 py-2.5 text-center text-sm text-white"
             onClick={() => setMobileOpen(false)}
           >

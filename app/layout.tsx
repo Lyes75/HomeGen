@@ -50,8 +50,11 @@ export default function RootLayout({
                 "Compare home generator installers and get free installation quotes across the United States.",
               potentialAction: {
                 "@type": "SearchAction",
-                target:
-                  "https://homegen.co/generator-installation/{state}/{city}",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate:
+                    "https://homegen.co/generator-installation/{state}/{city}",
+                },
                 "query-input": "required name=city",
               },
             }),
@@ -66,6 +69,8 @@ export default function RootLayout({
               name: "HomeGen",
               url: "https://homegen.co",
               logo: "https://homegen.co/logo.png",
+              description:
+                "Free service connecting homeowners with certified home generator installers across the United States.",
               sameAs: [],
             }),
           }}

@@ -7,6 +7,7 @@ import WhyHomeGen from "@/components/WhyHomeGen";
 import GuidesGrid from "@/components/GuidesGrid";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
   return (
@@ -14,11 +15,21 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <HowItWorks />
-        <Calculator />
-        <StateGrid />
-        <WhyHomeGen />
-        <GuidesGrid />
+        <ScrollReveal>
+          <HowItWorks />
+        </ScrollReveal>
+        <ScrollReveal>
+          <Calculator />
+        </ScrollReveal>
+        <ScrollReveal>
+          <StateGrid />
+        </ScrollReveal>
+        <ScrollReveal>
+          <WhyHomeGen />
+        </ScrollReveal>
+        <ScrollReveal>
+          <GuidesGrid />
+        </ScrollReveal>
         <CTABanner />
       </main>
       <Footer />

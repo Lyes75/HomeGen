@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function CTABanner() {
   return (
     <section
@@ -9,12 +11,15 @@ export default function CTABanner() {
           Don&apos;t Wait for the Next Power Outage
         </h2>
         <p className="mt-4 text-lg text-[var(--color-text-light)]">
-          Join 50,000+ homeowners who found their perfect generator through
-          HomeGen.
+          Thousands of homeowners lose power every year. Don&apos;t be one of
+          them.
         </p>
-        <button className="btn-gradient mt-8 rounded-xl px-10 py-4 text-lg">
+        <Link
+          href="/get-quotes"
+          className="btn-gradient mt-8 inline-block rounded-xl px-10 py-4 text-lg"
+        >
           Get Your Free Quote Now
-        </button>
+        </Link>
         <p className="mt-4 text-sm text-[var(--color-text-light)]">
           No spam. No obligations. Just quotes from local pros.
         </p>
