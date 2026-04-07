@@ -44,11 +44,11 @@ export default function GeneratorSizeGuide() {
     },
     {
       q: "Can a generator be too big for my house?",
-      a: "Technically yes, but it's rarely a real-world problem. An oversized generator costs more upfront and uses slightly more fuel at idle, but it won't damage anything. An undersized generator, on the other hand, will trip breakers, struggle under load, and wear out faster. When in doubt, go bigger.",
+      a: "Not really. An oversized unit wastes a bit of fuel at idle, but an undersized one will trip your breakers the first time your AC and dryer run at the same time.",
     },
     {
       q: "What's the difference between running watts and starting watts?",
-      a: "Running watts is the continuous power an appliance draws during normal operation. Starting watts (or surge watts) is the brief spike of power needed when a motor-driven appliance starts up — usually 2-3x the running wattage for a few seconds. Your generator must be sized to handle the highest starting surge.",
+      a: "Running watts is the continuous power an appliance draws during normal operation. Starting watts (or surge watts) is the brief spike when a motor kicks on, usually 2-3x the running wattage for a few seconds. Your generator must be sized to handle the highest starting surge.",
     },
     {
       q: "How long can a home generator run continuously?",
@@ -56,7 +56,7 @@ export default function GeneratorSizeGuide() {
     },
     {
       q: "Do I need a permit to install a home generator?",
-      a: "In most US cities and counties, yes. An electrical permit is required for connecting a generator to your home's electrical panel through a transfer switch. Permit costs typically range from $50 to $300. Your installer should handle the permitting process.",
+      a: "Yes, almost everywhere. Your installer handles it. Budget $50-$300.",
     },
   ];
 
@@ -121,7 +121,7 @@ export default function GeneratorSizeGuide() {
                 16 to 22 kW generator
               </strong>
               . But that range is wide enough to mean a $3,000 difference in
-              price — so getting it right matters.
+              price, so getting it right matters.
             </p>
             <p>
               The slightly longer answer depends on three things: what you want
@@ -197,14 +197,14 @@ export default function GeneratorSizeGuide() {
             <p>
               &quot;Essential circuits&quot; means the basics: fridge, lights, a
               few outlets, your internet, and maybe your heating system.
-              &quot;Whole house&quot; means everything stays on — central AC,
+              &quot;Whole house&quot; means everything stays on: central AC,
               electric dryer, oven, the works. The price gap between these two
               options is usually $2,000–$4,000, and most of that difference is
               the generator itself, not the installation.
             </p>
             <p>
               If you live anywhere south of Virginia, you want whole-house
-              coverage. Losing AC in July isn&apos;t just uncomfortable — it&apos;s
+              coverage. Losing AC in July isn&apos;t just uncomfortable. It&apos;s
               a health risk, especially for kids and elderly family members. And
               if you&apos;re spending $8,000+ on a generator install anyway, the
               marginal cost to go from &quot;some power&quot; to &quot;full
@@ -229,12 +229,11 @@ export default function GeneratorSizeGuide() {
               Start with the non-negotiables: refrigerator, lights, phone
               chargers, Wi-Fi router. Then ask yourself — can I live without AC
               for 48 hours? If the answer is no (and for most people, it is),
-              add your HVAC system to the list. That single addition typically
-              bumps you from a 14 kW unit to a 20+ kW unit.
+              add your HVAC system to the list. That alone jumps you from 14 to 20+ kW. It&apos;s the single biggest factor in sizing.
             </p>
             <p>
-              Don&apos;t forget sump pumps if you have a basement. Or medical
-              equipment — a CPAP machine only draws 400 watts, but you
+              Don&apos;t forget sump pumps if you have a basement. Medical
+              equipment too. A CPAP machine only draws 400 watts, but you
               absolutely cannot lose it during a storm. And if you work from
               home, your office setup (computer, monitors, router) is probably
               non-negotiable too.
@@ -246,9 +245,10 @@ export default function GeneratorSizeGuide() {
             Step 2: Look up the wattages
           </h3>
           <p className="mt-3 text-[var(--color-text-body)] leading-relaxed">
-            Here&apos;s a reference chart for the most common household
-            appliances. The &quot;starting watts&quot; column is the one that
-            matters most for sizing — more on that in a second.
+            I know, it&apos;s a lot of numbers. Bear with me. Here&apos;s a
+            reference chart for the most common household appliances. Pay
+            attention to the &quot;starting watts&quot; column. That&apos;s the
+            one that matters most for sizing.
           </p>
 
           <div className="mt-5 overflow-x-auto rounded-xl border border-[var(--color-border)]">
@@ -313,17 +313,17 @@ export default function GeneratorSizeGuide() {
             <p>
               Take your total running wattage, add the largest single starting
               wattage spike (usually your AC), then multiply the whole thing by
-              1.25. That 25% buffer isn&apos;t optional — it protects against
+              1.25. That 25% buffer isn&apos;t optional. It protects against
               simultaneous startup surges and gives your generator room to
-              breathe. Generators that run consistently above 80% load wear out
-              faster, run louder, and burn more fuel.
+              breathe. Generators that run consistently above 80% load get
+              loud, burn through fuel faster, and don&apos;t last as long.
             </p>
             <p>
               Most electricians will tell you to go one size up from your
-              calculation. They&apos;re right — but not because of safety
-              margins. It&apos;s because generators are loudest and least
-              efficient when running at 90%+ capacity. Dropping to 70-80% load
-              makes a noticeable difference in noise and fuel consumption.
+              calculation. They&apos;re right, but not for the reason you think.
+              It&apos;s not about safety margins. It&apos;s because generators
+              are loudest and least efficient when running at 90%+ capacity.
+              Drop to 70-80% load and the difference in noise is night and day.
             </p>
           </div>
 
@@ -370,10 +370,10 @@ export default function GeneratorSizeGuide() {
             </p>
             <p>
               Always round UP, not down. A 22 kW generator running your 20 kW
-              load at 90% capacity will be louder, less efficient, and
-              shorter-lived than a 24 kW unit running the same load at 83%. The
-              price difference is usually $500-$800 for the unit — on a $10,000+
-              project, that&apos;s noise.
+              load at 90% capacity will be louder and burns through fuel faster.
+              It won&apos;t last as long either. A 24 kW unit running the same
+              load at 83% is a much better deal. You&apos;re looking at maybe
+              $600 more for the bigger unit. On a ten grand project? Just do it.
             </p>
           </div>
 
@@ -418,7 +418,7 @@ export default function GeneratorSizeGuide() {
               Here&apos;s how it happens: you get three quotes. One installer
               recommends a 22 kW Generac for $12,000. Another says you can get
               away with a 14 kW unit for $8,000. You pick the cheaper one
-              because — reasonably — $4,000 is real money.
+              because, reasonably, $4,000 is real money.
             </p>
             <p>
               Then hurricane season hits. The power goes out. Your 14 kW
@@ -450,6 +450,10 @@ export default function GeneratorSizeGuide() {
             Generator Size Recommendations by Scenario
           </h2>
 
+          <p className="mt-4 text-[var(--color-text-body)] leading-relaxed">
+            OK, quick rundown of what makes sense for each home size.
+          </p>
+
           <div className="mt-6 space-y-8">
             {/* Small home */}
             <div className="rounded-xl border border-[var(--color-border)] p-5 sm:p-6">
@@ -474,9 +478,8 @@ export default function GeneratorSizeGuide() {
                 This is where most buyers land. A 20-22 kW air-cooled generator
                 covers central AC, all major appliances, and your home office.
                 Budget: $9,000-$14,000 installed. The Generac Guardian 22 kW and
-                Kohler 20RCAL are the two most popular models in this range — and
-                for good reason. They hit the sweet spot of power, price, and
-                reliability.
+                Kohler 20RCAL are the two most popular models in this range.
+                There&apos;s a reason they&apos;re the best sellers.
               </p>
             </div>
 
@@ -488,10 +491,10 @@ export default function GeneratorSizeGuide() {
               <p className="mt-2 text-[var(--color-text-body)] leading-relaxed">
                 You&apos;ll need 24-26 kW if you want whole-house coverage plus
                 a pool pump or EV charger. Budget: $12,000-$18,000 installed. At
-                this size, ask your installer about load management — a smart
+                this size, ask your installer about load management. A smart
                 transfer switch can let a smaller generator handle a bigger house
-                by cycling loads automatically. So your AC and dryer never run
-                simultaneously, but you barely notice.
+                by cycling loads automatically. Your AC and dryer never run at
+                the same time, but honestly, you barely notice.
               </p>
             </div>
 
@@ -506,7 +509,7 @@ export default function GeneratorSizeGuide() {
                 installed. These are commercial-grade units and need more
                 clearance space, a concrete pad, and potentially a dedicated fuel
                 supply. Yeah, that sounds like a lot. But if you own a 5,000+ sq
-                ft home, you&apos;re not shopping by price — you&apos;re shopping
+                ft home, you&apos;re not shopping by price. You&apos;re shopping
                 by reliability.
               </p>
             </div>
@@ -522,23 +525,23 @@ export default function GeneratorSizeGuide() {
 
           <div className="mt-4 space-y-4 text-[var(--color-text-body)] leading-relaxed">
             <p>
-              Air-cooled generators cover the 7.5 to 26 kW range. They&apos;re
-              cheaper, more compact, easier to maintain, and sufficient for about
-              90% of residential installations. Think of them like a car
-              engine — air flowing over the engine block keeps it cool.
+              Simple version: air-cooled generators cover the 7.5 to 26 kW range.
+              They&apos;re cheaper and way easier to maintain. They&apos;re also
+              smaller, which matters when your unit sits three feet from a bedroom
+              window. Good enough for about 90% of homes.
             </p>
             <p>
               Liquid-cooled generators start at 25 kW and go up to 150 kW. They
               run quieter, last longer under heavy use, and handle sustained
-              loads better. They also cost 40-60% more and require more
-              installation space.
+              loads better. But they cost 40-60% more and need more space for
+              installation.
             </p>
             <p>
               If your calculation came out under 26 kW, go air-cooled. Period.
               You don&apos;t need the extra cost and complexity. If you&apos;re
-              above 26 kW, you have no choice — air-cooled units top out there.
-              And if you&apos;re right at 24-26 kW and thinking about
-              liquid-cooled &quot;just in case&quot; — save your money. A
+              above 26 kW, you have no choice because air-cooled units top out
+              there. And if you&apos;re right at 24-26 kW and thinking about
+              liquid-cooled &quot;just in case,&quot; save your money. A
               properly sized air-cooled unit will serve you well for 10-15 years.
             </p>
           </div>
@@ -570,7 +573,7 @@ export default function GeneratorSizeGuide() {
               verify this, but it&apos;s worth asking about. A generator pulling
               200,000+ BTU/hour can overwhelm a standard residential gas meter.
               Upgrading the meter is usually free from the gas company, but it
-              takes 2-4 weeks — so plan ahead.
+              takes 2-4 weeks. Plan ahead.
             </p>
           </div>
 
@@ -598,7 +601,7 @@ export default function GeneratorSizeGuide() {
           {/* Final CTA */}
           <div className="mt-14 rounded-2xl bg-gradient-to-br from-[var(--color-bg-dark)] to-[#1E293B] p-8 text-center sm:p-10">
             <p className="text-lg text-white leading-relaxed">
-              Still not sure what size you need? That&apos;s normal — every home
+              Still not sure what size you need? That&apos;s normal. Every home
               is different. The fastest way to get a definitive answer is to have
               a local installer do an on-site assessment. They&apos;ll inspect
               your electrical panel, measure your actual loads, and recommend the
