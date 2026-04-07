@@ -6,9 +6,10 @@ import Link from "next/link";
 
 interface QuoteFormProps {
   initialCity?: string;
+  source?: string;
 }
 
-export default function QuoteForm({ initialCity = "" }: QuoteFormProps) {
+export default function QuoteForm({ initialCity = "", source = "direct" }: QuoteFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -39,12 +40,14 @@ export default function QuoteForm({ initialCity = "" }: QuoteFormProps) {
     setError("");
 
     try {
-      const res = await fetch("https://formspree.io/f/xjkwpgbz", {
+      const res = await fetch("https://formspree.io/f/mykbolzl", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
+          source,
           submittedAt: new Date().toISOString(),
+          _subject: `New HomeGen Lead — ${formData.city || "Unknown"}`,
         }),
       });
 
@@ -73,10 +76,10 @@ export default function QuoteForm({ initialCity = "" }: QuoteFormProps) {
           You&apos;ll hear from local installers within 24-48 hours.
         </p>
         <Link
-          href="/#guides"
+          href="/guides/generator-installation-cost"
           className="btn-gradient mt-8 inline-block rounded-lg px-6 py-3 text-sm"
         >
-          While You Wait, Check Our Buying Guides →
+          While You Wait, Check Our Generator Buying Guide →
         </Link>
       </div>
     );

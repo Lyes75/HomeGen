@@ -19,6 +19,7 @@ type Props = {
 export default async function GetQuotesPage({ searchParams }: Props) {
   const params = await searchParams;
   const initialCity = (params.city as string) || (params.zip as string) || "";
+  const source = (params.source as string) || "direct";
 
   return (
     <>
@@ -35,7 +36,7 @@ export default async function GetQuotesPage({ searchParams }: Props) {
             </p>
           </div>
 
-          <QuoteForm initialCity={initialCity} />
+          <QuoteForm initialCity={initialCity} source={source} />
         </div>
 
         <script
