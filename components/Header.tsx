@@ -20,10 +20,10 @@ export default function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/logo.png"
+            src="/logo-full.png"
             alt="HomeGen - Home Generator Installation"
-            width={140}
-            height={36}
+            width={160}
+            height={40}
             priority
           />
         </Link>
