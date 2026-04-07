@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cookies } from "next/headers";
 
 export async function POST(request: NextRequest) {
   const { username, password } = await request.json();
@@ -10,8 +9,8 @@ export async function POST(request: NextRequest) {
   ) {
     const token = Buffer.from(`${username}:${Date.now()}`).toString("base64");
 
-    const cookieStore = await cookies();
-    cookieStore.set("admin_token", token, {
+    const response = NextResponse.json({ success: true });
+    response.cookies.set("admin_token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
@@ -19,14 +18,20 @@ export async function POST(request: NextRequest) {
       path: "/",
     });
 
-    return NextResponse.json({ success: true });
+    return response;
   }
 
   return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
 }
 
 export async function DELETE() {
-  const cookieStore = await cookies();
-  cookieStore.delete("admin_token");
-  return NextResponse.json({ success: true });
+  const response = NextResponse.json({ success: true });
+  response.cookies.set("admin_token", "", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    maxAge: 0,
+    path: "/",
+  });
+  return response;
 }
