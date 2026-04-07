@@ -9,9 +9,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Home Generator Installation — Get Free Quotes | HomeGen",
+  title: "Home Generator Installation — Free Quotes from Local Installers | HomeGen",
   description:
-    "Compare trusted home generator installers near you. Get free quotes for whole-house generator installation. Generac, Kohler, Cummins — all brands covered.",
+    "Compare trusted home generator installers in your area. Use our free calculator to estimate costs, find the right size, and get no-obligation quotes from certified local pros. Generac, Kohler, Cummins — all brands covered.",
   openGraph: {
     title: "Find Home Generator Installers Near You | HomeGen",
     description:
