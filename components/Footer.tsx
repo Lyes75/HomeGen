@@ -12,7 +12,7 @@ const stateLinks = [
 
 const resourceLinks = [
   { label: "Cost Guide", href: "/guides/generator-installation-cost" },
-  { label: "Calculator", href: "#calculator" },
+  { label: "Calculator", href: "/calculator" },
   { label: "Size Guide", href: "/guides/generator-size-calculator" },
   { label: "Brands", href: "/brands" },
 ];

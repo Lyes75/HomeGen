@@ -230,6 +230,15 @@ export default function Calculator() {
             <p className="mt-3 text-xs text-[var(--color-text-light)]">
               Prices vary by location. Enter your ZIP code for local estimates.
             </p>
+            <p className="mt-4">
+              <Link
+                href="/calculator"
+                className="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-primary-cyan)] hover:underline"
+              >
+                Need a more precise estimate? Try our detailed calculator
+                <ArrowRight size={14} />
+              </Link>
+            </p>
           </div>
         </div>
       </div>

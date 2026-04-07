@@ -25,6 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: "https://homegen.co/calculator",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: "https://homegen.co/get-quotes",
       lastModified: new Date(),
       changeFrequency: "monthly",
