@@ -109,8 +109,8 @@ export default function InstallerApplicationForm() {
         </div>
         <p className="mt-6 text-sm text-gray-500">
           Questions? Email us at{" "}
-          <a href="mailto:partners@homegen.co" className="text-[#00D4E8] hover:underline">
-            partners@homegen.co
+          <a href="mailto:contact@homegen.co" className="text-[#00D4E8] hover:underline">
+            contact@homegen.co
           </a>
         </p>
       </div>
