@@ -1,27 +1,43 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
-  const { username, password } = await request.json();
+  try {
+    const body = await request.json();
+    const { username, password } = body;
 
-  if (
-    username === process.env.ADMIN_USERNAME &&
-    password === process.env.ADMIN_PASSWORD
-  ) {
-    const token = Buffer.from(`${username}:${Date.now()}`).toString("base64");
+    const envUser = process.env.ADMIN_USERNAME;
+    const envPass = process.env.ADMIN_PASSWORD;
 
-    const response = NextResponse.json({ success: true });
-    response.cookies.set("admin_token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
-      maxAge: 60 * 60 * 24 * 7,
-      path: "/",
-    });
+    // Debug: check if env vars are loaded
+    if (!envUser || !envPass) {
+      return NextResponse.json(
+        { error: "Server configuration error", hasUser: !!envUser, hasPass: !!envPass },
+        { status: 500 }
+      );
+    }
 
-    return response;
+    if (username === envUser && password === envPass) {
+      const token = Buffer.from(`${username}:${Date.now()}`).toString("base64");
+
+      const response = NextResponse.json({ success: true });
+      response.cookies.set("admin_token", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        maxAge: 60 * 60 * 24 * 7,
+        path: "/",
+      });
+
+      return response;
+    }
+
+    return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
+  } catch (err) {
+    return NextResponse.json(
+      { error: "Server error", detail: String(err) },
+      { status: 500 }
+    );
   }
-
-  return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
 }
 
 export async function DELETE() {
