@@ -421,7 +421,7 @@ export default function ForInstallersPage() {
             />
             <FAQItem
               q="Are leads exclusive or shared?"
-              a="By default, each lead is sent to 2-3 installers in the area so the homeowner gets multiple quotes. If you want exclusive leads (sent only to you), the per-lead price is higher. We'll discuss this during onboarding."
+              a="Each lead is sent to a maximum of 3 installers in the area — never more. This ensures the homeowner gets a fast response and you get a fair shot at winning the job. Want exclusive leads? We offer exclusive leads in areas where we have enough volume. Ask us during onboarding."
             />
             <FAQItem
               q="What if a lead has bad contact info?"
