@@ -40,14 +40,15 @@ export default function QuoteForm({ initialCity = "", source = "direct" }: Quote
     setError("");
 
     try {
-      const res = await fetch("https://formspree.io/f/mykbolzl", {
+      const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
+          fuelType: formData.fuel,
           source,
+          sourceUrl: typeof window !== "undefined" ? window.location.href : "",
           submittedAt: new Date().toISOString(),
-          _subject: `New HomeGen Lead — ${formData.city || "Unknown"}`,
         }),
       });
 
