@@ -153,8 +153,9 @@ export default function Hero() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg text-[var(--color-text-body)] sm:text-xl">
-          Compare local installers, estimate costs, and get free quotes for
-          whole-house generator installation in 60 seconds.
+          Get free, no-obligation quotes from certified local installers.
+          Use our calculator to find the right size and estimate costs
+          before you buy.
         </p>
 
         {/* Search bar */}
