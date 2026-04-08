@@ -248,10 +248,10 @@ export default function TermsPage() {
                   <br />
                   Email:{" "}
                   <a
-                    href="mailto:contact@netaudience.fr"
+                    href="mailto:contact@homegen.co"
                     className="text-[var(--color-primary-cyan)] hover:underline"
                   >
-                    contact@netaudience.fr
+                    contact@homegen.co
                   </a>
                   <br />
                   Website:{" "}

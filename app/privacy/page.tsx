@@ -48,10 +48,10 @@ export default function PrivacyPage() {
               <p className="mt-2">
                 Email:{" "}
                 <a
-                  href="mailto:contact@netaudience.fr"
+                  href="mailto:contact@homegen.co"
                   className="text-[var(--color-primary-cyan)] hover:underline"
                 >
-                  contact@netaudience.fr
+                  contact@homegen.co
                 </a>
               </p>
             </section>
@@ -268,10 +268,10 @@ export default function PrivacyPage() {
                 <p>
                   To exercise any of these rights, email us at{" "}
                   <a
-                    href="mailto:contact@netaudience.fr"
+                    href="mailto:contact@homegen.co"
                     className="text-[var(--color-primary-cyan)] hover:underline"
                   >
-                    contact@netaudience.fr
+                    contact@homegen.co
                   </a>{" "}
                   with the subject line &quot;Privacy Request&quot; and include
                   your name and the email address you used to submit your quote.
@@ -308,10 +308,10 @@ export default function PrivacyPage() {
                 <p>
                   To submit a CCPA request, email{" "}
                   <a
-                    href="mailto:contact@netaudience.fr"
+                    href="mailto:contact@homegen.co"
                     className="text-[var(--color-primary-cyan)] hover:underline"
                   >
-                    contact@netaudience.fr
+                    contact@homegen.co
                   </a>{" "}
                   with the subject line &quot;CCPA Request.&quot;
                 </p>
@@ -357,10 +357,10 @@ export default function PrivacyPage() {
                   <br />
                   Email:{" "}
                   <a
-                    href="mailto:contact@netaudience.fr"
+                    href="mailto:contact@homegen.co"
                     className="text-[var(--color-primary-cyan)] hover:underline"
                   >
-                    contact@netaudience.fr
+                    contact@homegen.co
                   </a>
                   <br />
                   Website:{" "}
