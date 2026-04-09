@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Cost Guide", href: "/#guides" },
   { label: "States", href: "/states" },
   { label: "Guides", href: "/#guides" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
