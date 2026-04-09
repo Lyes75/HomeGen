@@ -131,8 +131,8 @@ export default function HurricaneGuide() {
               The Atlantic hurricane season officially runs from June 1 to
               November 30, with peak activity between mid-August and
               mid-October. According to{" "}
-              <a href="https://www.noaa.gov/news-release" target="_blank" rel="noopener noreferrer" className={extLink}>
-                NOAA&apos;s 2026 seasonal outlook
+              <a href="https://www.nhc.noaa.gov/" target="_blank" rel="noopener noreferrer" className={extLink}>
+                NOAA&apos;s National Hurricane Center
               </a>
               , this year is expected to be above-average, continuing a
               pattern of intensifying seasons driven by warmer ocean
@@ -284,6 +284,23 @@ export default function HurricaneGuide() {
                 interactive calculator
               </Link>{" "}
               to get a recommendation based on your specific appliances.
+              The most popular models in this range are the{" "}
+              <a href="https://www.generac.com/all-products/generators/home-backup-generators/guardian" target="_blank" rel="noopener noreferrer" className={extLink}>
+                Generac Guardian 22 kW
+              </a>{" "}
+              and the{" "}
+              <a href="https://www.kohlerpower.com/na/en/residential/generators.html" target="_blank" rel="noopener noreferrer" className={extLink}>
+                Kohler 20RCAL
+              </a>
+              . Comparing brands? Check our{" "}
+              <Link href="/guides/generac-vs-kohler" className={intLink}>
+                Generac vs Kohler comparison
+              </Link>{" "}
+              or browse{" "}
+              <Link href="/brands" className={intLink}>
+                all generator brands we cover
+              </Link>
+              .
             </p>
             <p>
               The American Red Cross recommends that households with elderly
@@ -613,7 +630,7 @@ export default function HurricaneGuide() {
               "@context": "https://schema.org",
               "@type": "Article",
               headline: "How Do I Prepare My Home Generator for Hurricane Season 2026?",
-              description: "Month-by-month hurricane preparation timeline for home generators, including costs, sizing, state-by-state risk, and critical safety rules.",
+              description: "Complete hurricane season generator preparation guide: timeline, sizing, costs, state-by-state risk, and safety checklist.",
               author: {
                 "@type": "Person",
                 name: "Lyes Boussouf",
@@ -636,17 +653,22 @@ export default function HurricaneGuide() {
                   "@type": "CreativeWork",
                   name: "2026 Atlantic Hurricane Season Outlook",
                   author: { "@type": "Organization", name: "National Oceanic and Atmospheric Administration (NOAA)" },
-                  url: "https://www.noaa.gov/news-release",
+                  url: "https://www.nhc.noaa.gov/",
                 },
                 {
                   "@type": "CreativeWork",
-                  name: "Ready.gov Hurricane Preparedness Guide",
+                  name: "Hurricane Preparedness Guidelines",
                   author: { "@type": "Organization", name: "Federal Emergency Management Agency (FEMA)" },
                 },
                 {
                   "@type": "CreativeWork",
-                  name: "Home Emergency Backup Power Guidelines",
+                  name: "Backup Power and Generator Safety",
                   author: { "@type": "Organization", name: "American Red Cross" },
+                },
+                {
+                  "@type": "CreativeWork",
+                  name: "Carbon Monoxide Poisoning After Natural Disasters",
+                  author: { "@type": "Organization", name: "Centers for Disease Control and Prevention (CDC)" },
                 },
               ],
             }),
@@ -675,14 +697,14 @@ export default function HurricaneGuide() {
               "@context": "https://schema.org",
               "@type": "HowTo",
               name: "How to Prepare Your Home Generator for Hurricane Season",
-              description: "Step-by-step timeline to prepare your home standby generator before, during, and after hurricane season.",
+              description: "Month-by-month action plan to get your home ready for hurricane season with a standby generator.",
               step: [
-                { "@type": "HowToStep", name: "6 months before: Research and purchase", text: "Get quotes from 2-3 local installers, choose your generator size and brand, and sign the installation contract." },
-                { "@type": "HowToStep", name: "3 months before: Install and test", text: "Complete installation, pass permit inspection, run your first test, and set up the weekly exercise schedule." },
-                { "@type": "HowToStep", name: "1 month before: Maintenance and prep", text: "Change oil and filters, verify fuel supply, run a full-load transfer test, and finalize your family storm plan." },
-                { "@type": "HowToStep", name: "48-72 hours before storm: Final checks", text: "Run a final test start, clear debris around the unit, fill vehicles with gas, charge all devices." },
-                { "@type": "HowToStep", name: "During the storm: Stay inside", text: "The standby generator starts automatically. Monitor via mobile app. Do not go outside during the storm." },
-                { "@type": "HowToStep", name: "After the storm: Inspect and service", text: "Check for damage and debris, verify oil level, and schedule professional service if the unit ran for 48+ hours." },
+                { "@type": "HowToStep", name: "6 months before (Jan-Feb)", text: "Research generator sizes, get 2-3 quotes from local installers, choose your brand, sign the contract." },
+                { "@type": "HowToStep", name: "3 months before (Mar-Apr)", text: "Complete installation, pass permit inspection, run first test with installer, set up weekly exercise schedule." },
+                { "@type": "HowToStep", name: "1 month before (May)", text: "Annual maintenance service, verify fuel supply, test automatic transfer switch, update family storm plan." },
+                { "@type": "HowToStep", name: "Storm approaching (48-72h)", text: "Run final test start, clear debris around unit, secure loose items, fill vehicles with gas, charge all devices." },
+                { "@type": "HowToStep", name: "During the storm", text: "Generator starts automatically. Monitor via app. Do not go outside to check. Wait for safe conditions if it shuts down." },
+                { "@type": "HowToStep", name: "After the storm", text: "Inspect for damage and debris, check oil level, let ATS switch back to grid automatically, schedule service if ran 48+ hours." },
               ],
             }),
           }}
