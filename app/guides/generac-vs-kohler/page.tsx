@@ -262,7 +262,7 @@ export default function GeneracVsKohlerGuide() {
               answer is: they&apos;re close. Really close.
             </p>
             <p>
-              <a href="https://www.consumerreports.org/generators/best-standby-generators/" target="_blank" rel="noopener noreferrer" className={extLink}>
+              <a href="https://www.consumerreports.org/home-garden/generators/" target="_blank" rel="noopener noreferrer" className={extLink}>
                 Consumer Reports
               </a>{" "}
               rates both Generac and Kohler as &quot;Recommended&quot; in their
@@ -500,6 +500,10 @@ export default function GeneracVsKohlerGuide() {
                 <li>• You&apos;re comparing reliability only. Both brands will last 15-20 years with proper maintenance. Flip a coin.</li>
                 <li>• Your generator is 30+ feet from the house. The noise difference becomes irrelevant at that distance.</li>
               </ul>
+              <p className="mt-3 text-sm text-[var(--color-text-body)]">
+                For a broader view, see{" "}
+                <Link href="/brands" className={intLink}>all the generator brands we cover</Link>.
+              </p>
             </div>
           </div>
 
@@ -595,7 +599,7 @@ export default function GeneracVsKohlerGuide() {
               headline:
                 "Generac vs Kohler: Which Home Generator Is Better in 2026?",
               description:
-                "Side-by-side comparison of Generac and Kohler home generators covering price, reliability, noise, warranty, and dealer support.",
+                "Side-by-side comparison of Generac and Kohler home standby generators: price, reliability, noise, warranty, and dealer support.",
               author: {
                 "@type": "Person",
                 name: "Lyes Boussouf",
@@ -629,12 +633,12 @@ export default function GeneracVsKohlerGuide() {
               citation: [
                 {
                   "@type": "CreativeWork",
-                  name: "Best Standby Generators Buying Guide",
+                  name: "Best Standby Generators Ratings",
                   author: {
                     "@type": "Organization",
                     name: "Consumer Reports",
                   },
-                  url: "https://www.consumerreports.org/generators/best-standby-generators/",
+                  url: "https://www.consumerreports.org/home-garden/generators/",
                 },
                 {
                   "@type": "CreativeWork",
