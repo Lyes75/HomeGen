@@ -49,6 +49,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://homegen.co/guides/generac-vs-kohler",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://homegen.co/guides/generator-size-calculator",
       lastModified: new Date(),
       changeFrequency: "monthly",
