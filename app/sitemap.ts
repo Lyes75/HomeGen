@@ -43,6 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: "https://homegen.co/guides/generator-installation-cost",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://homegen.co/guides/generator-size-calculator",
       lastModified: new Date(),
       changeFrequency: "monthly",
