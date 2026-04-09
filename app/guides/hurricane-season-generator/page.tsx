@@ -589,7 +589,7 @@ export default function HurricaneGuide() {
               LB
             </div>
             <div>
-              <p className="text-sm font-semibold text-[var(--color-text-dark)]">Lyes Boussouf</p>
+              <p className="text-sm font-semibold text-[var(--color-text-dark)]">Lyes</p>
               <p className="mt-1 text-xs text-[var(--color-text-light)]">Founder &amp; Home Energy Specialist</p>
               <p className="mt-2 text-sm text-[var(--color-text-body)] leading-relaxed">
                 Lyes tracks hurricane preparedness data, outage statistics, and

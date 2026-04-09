@@ -645,7 +645,7 @@ export default function GeneratorCostGuide() {
             </div>
             <div>
               <p className="text-sm font-semibold text-[var(--color-text-dark)]">
-                Lyes Boussouf
+                Lyes
               </p>
               <p className="mt-1 text-xs text-[var(--color-text-light)]">
                 Founder &amp; Home Energy Specialist
