@@ -567,12 +567,12 @@ export default function GeneratorCostGuide() {
               Some utility companies offer demand-response incentives for
               standby generators. The{" "}
               <a
-                href="https://www.energy.gov/energysaver/planning-home-energy-generation"
+                href="https://www.energy.gov/energysaver"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={extLink}
               >
-                Department of Energy&apos;s home energy generation page
+                Department of Energy&apos;s Energy Saver program
               </a>{" "}
               lists federal and state programs. It&apos;s not a huge discount,
               but $200-$500 off is $200-$500 off.
@@ -734,7 +734,7 @@ export default function GeneratorCostGuide() {
               citation: [
                 {
                   "@type": "CreativeWork",
-                  name: "Value of Construction Put in Place Survey",
+                  name: "Construction Spending - Annual Value of Construction Put in Place",
                   author: {
                     "@type": "Organization",
                     name: "U.S. Census Bureau",
@@ -743,7 +743,7 @@ export default function GeneratorCostGuide() {
                 },
                 {
                   "@type": "CreativeWork",
-                  name: "Best Standby Generators of 2026",
+                  name: "Best Standby Generators Buying Guide",
                   author: {
                     "@type": "Organization",
                     name: "Consumer Reports",
@@ -751,10 +751,18 @@ export default function GeneratorCostGuide() {
                 },
                 {
                   "@type": "CreativeWork",
-                  name: "NFPA 70: National Electrical Code",
+                  name: "NFPA 37: Standard for the Installation and Use of Stationary Combustion Engines and Gas Turbines",
                   author: {
                     "@type": "Organization",
                     name: "National Fire Protection Association",
+                  },
+                },
+                {
+                  "@type": "CreativeWork",
+                  name: "Cost vs. Value Report",
+                  author: {
+                    "@type": "Organization",
+                    name: "Remodeling Magazine",
                   },
                 },
               ],
