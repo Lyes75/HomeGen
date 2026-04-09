@@ -505,7 +505,7 @@ export default function GeneratorSizeGuide() {
                 covers central AC, all major appliances, and your home office.
                 Budget: $9,000-$14,000 installed. The{" "}
                 <a href="https://www.generac.com/all-products/generators/home-backup-generators/guardian" target="_blank" rel="noopener noreferrer" className="text-[var(--color-primary-cyan)] hover:underline">Generac Guardian 22 kW</a> and{" "}
-                <a href="https://www.kohlerpower.com/na/en/residential/generators.html" target="_blank" rel="noopener noreferrer" className="text-[var(--color-primary-cyan)] hover:underline">Kohler 20RCAL</a> are the two most popular models in this range.
+                <a href="https://www.kohlerpower.com/na/en/residential/generators.html" target="_blank" rel="noopener noreferrer" className="text-[var(--color-primary-cyan)] hover:underline">Kohler 20RCAL</a>{" "}are the two most popular models in this range.
                 There&apos;s a reason they&apos;re the best sellers.
               </p>
             </div>
@@ -595,7 +595,7 @@ export default function GeneratorSizeGuide() {
               propane equivalents at the same engine size. So a 22 kW generator
               on propane might only deliver 20 kW on natural gas. Most
               manufacturers rate their units for both fuels. Check the{" "}
-              <a href="https://www.generac.com/all-products/generators/home-backup-generators/guardian" target="_blank" rel="noopener noreferrer" className="text-[var(--color-primary-cyan)] hover:underline">spec sheet</a> for
+              <a href="https://www.generac.com/all-products/generators/home-backup-generators/guardian" target="_blank" rel="noopener noreferrer" className="text-[var(--color-primary-cyan)] hover:underline">spec sheet</a>{" "}for
               the &quot;natural gas&quot; rating specifically. Don&apos;t
               just look at the headline number.
             </p>
@@ -653,14 +653,14 @@ export default function GeneratorSizeGuide() {
           {/* Author Box */}
           <div className="mt-14 flex items-start gap-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-light)] p-5 sm:p-6">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[var(--color-primary-cyan)] to-[var(--color-primary-mint)] text-lg font-bold text-white">
-              HG
+              LB
             </div>
             <div>
               <p className="text-sm font-semibold text-[var(--color-text-dark)]">
-                HomeGen Editorial Team
+                Lyes Boussouf
               </p>
               <p className="mt-1 text-xs text-[var(--color-text-light)]">
-                Reviewed by licensed electricians and generator installation professionals
+                Founder &amp; Home Energy Specialist
               </p>
               <p className="mt-2 text-sm text-[var(--color-text-body)] leading-relaxed">
                 The HomeGen team researches home backup power systems, interviews
@@ -706,9 +706,9 @@ export default function GeneratorSizeGuide() {
                 "How to calculate the right generator size for your home, with wattage charts, common mistakes, and a free interactive calculator.",
               author: {
                 "@type": "Person",
-                name: "HomeGen Editorial Team",
+                name: "Lyes Boussouf",
                 url: "https://homegen.co/about",
-                jobTitle: "Home Backup Power Specialists",
+                jobTitle: "Founder & Home Energy Specialist",
                 worksFor: {
                   "@type": "Organization",
                   name: "HomeGen",
