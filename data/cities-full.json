@@ -15,7 +15,7 @@
     "dominantFuel": "Natural Gas",
     "fuelReason": "Most suburban Miami homes have natural gas via FPL's gas division. Propane is used in flood-prone areas where gas lines are restricted and in the Keys.",
     "outageHoursYear": 31,
-    "nearbyCities": ["Fort Lauderdale", "Orlando", "Tampa"],
+    "nearbyCities": ["Tampa", "Orlando", "Jacksonville"],
     "description": "Miami sits in one of the most hurricane-exposed metro areas in the US. FPL serves over 5 million customers in Southeast Florida, and Miami-Dade's strict HVHZ building code adds $300-$500 to generator installations compared to other Florida counties. The combination of hurricane risk, extreme summer heat, and aging coastal infrastructure makes a standby generator close to a necessity here.",
     "faqSpecific": [
       { "q": "How much does a 22 kW generator cost in Miami?", "a": "A 22 kW whole-house generator costs $9,500-$15,000 fully installed in Miami. This is 5-10% above the Florida average because Miami-Dade's HVHZ wind code requires rated mounting hardware that costs more than standard installations." },
@@ -111,7 +111,7 @@
     "dominantFuel": "Natural Gas",
     "fuelReason": "Dominion provides gas service in the Charleston metro. Propane is common on the sea islands and rural areas.",
     "outageHoursYear": 50,
-    "nearbyCities": ["Myrtle Beach", "Columbia", "Savannah"],
+    "nearbyCities": ["Myrtle Beach", "Columbia"],
     "description": "Charleston's historic Lowcountry setting puts it at the intersection of every coastal hazard: hurricane winds, storm surge, and chronic flooding. Dominion Energy serves the area, and extended outages are increasingly common as storms intensify. The 2024 hurricane season was a wake-up call for many Charleston homeowners who had put off generator purchases.",
     "faqSpecific": [
       { "q": "How much does a 22 kW generator cost in Charleston?", "a": "A 22 kW generator costs $9,000-$14,500 installed in Charleston. Coastal wind-rated mounting and flood zone requirements add $300-$700 above inland SC prices." },
@@ -135,7 +135,7 @@
     "dominantFuel": "Natural Gas",
     "fuelReason": "Piedmont Natural Gas serves the Charlotte metro. Most suburban homes have gas service.",
     "outageHoursYear": 16,
-    "nearbyCities": ["Raleigh", "Wilmington", "Atlanta"],
+    "nearbyCities": ["Raleigh", "Wilmington"],
     "description": "Charlotte's Piedmont location means it gets hit by ice storms in winter and severe thunderstorms in summer. The city's massive growth over the past decade has strained Duke Energy's distribution grid. The December 2022 rolling blackouts were a shock to many Charlotte residents who assumed grid reliability was a given.",
     "faqSpecific": [
       { "q": "How much does a 22 kW generator cost in Charlotte?", "a": "A 22 kW generator costs $9,000-$15,000 installed in Charlotte. This is slightly above the NC average due to higher metro labor rates. Getting 3 quotes is especially important in Charlotte — price variation between contractors is significant." },
@@ -159,7 +159,7 @@
     "dominantFuel": "Natural Gas",
     "fuelReason": "Georgia's deregulated gas market means competitive pricing. Atlanta Gas Light provides the infrastructure, with multiple marketers offering service.",
     "outageHoursYear": 20,
-    "nearbyCities": ["Savannah", "Charlotte", "Nashville"],
+    "nearbyCities": ["Savannah"],
     "description": "Atlanta has one of the densest urban tree canopies in the US, which is beautiful but dangerous during storms. Falling trees and limbs are the #1 cause of power outages in metro Atlanta. Georgia Power serves the area, and outages from severe thunderstorms are a regular occurrence from March through September. Helene (2024) proved that even inland Atlanta isn't safe from hurricane-force events.",
     "faqSpecific": [
       { "q": "How much does a 22 kW generator cost in Atlanta?", "a": "A 22 kW generator costs $8,500-$14,000 installed in Atlanta. This is slightly above the Georgia state average due to metro labor rates, but below national average. Atlanta has a competitive installer market." },

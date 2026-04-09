@@ -50,11 +50,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { state, city } = await params;
   const c = getCity(state, city);
   if (!c) return {};
+  const url = `https://homegen.co/generator-installation/${c.stateSlug}/${c.slug}`;
   return {
     title: `Generator Installers in ${c.city}, ${c.stateAbbr} — Cost & Free Quotes (2026)`,
     description: `Find trusted generator installers in ${c.city}, ${c.state}. Average cost: $${c.wholeCostLow.toLocaleString()}-$${c.wholeCostHigh.toLocaleString()}. Get free, no-obligation quotes from certified local pros.`,
-    alternates: {
-      canonical: `https://homegen.co/generator-installation/${c.stateSlug}/${c.slug}`,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `Generator Installers in ${c.city}, ${c.stateAbbr} — Cost & Free Quotes (2026)`,
+      description: `Find trusted generator installers in ${c.city}, ${c.state}. Average cost: $${c.wholeCostLow.toLocaleString()} – $${c.wholeCostHigh.toLocaleString()}. Free quotes from certified local pros.`,
+      url,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `Generator Installers in ${c.city}, ${c.stateAbbr} — Cost & Free Quotes (2026)`,
+      description: `Compare local installers in ${c.city}. Get free, no-obligation quotes.`,
     },
   };
 }
@@ -68,16 +78,17 @@ export default async function CityPage({ params }: Props) {
   const thClass = "px-4 py-3 text-left text-sm font-semibold text-[var(--color-text-dark)] bg-[var(--color-bg-light)]";
   const tdClass = "px-4 py-3 text-sm text-[var(--color-text-body)] border-t border-[var(--color-border)]";
 
-  // Find nearby cities that have published pages
+  // Find nearby cities — link if published, show as text if not
   const publishedSlugs = new Set((citiesFullData as CityData[]).map((x) => x.slug));
-  const nearbyCityData = c.nearbyCities
-    .map((name) => {
-      const match = (citiesFullData as CityData[]).find(
-        (x) => x.city === name && publishedSlugs.has(x.slug)
-      );
-      return match ? { name: match.city, slug: match.slug, stateSlug: match.stateSlug, abbr: match.stateAbbr } : null;
-    })
-    .filter(Boolean) as { name: string; slug: string; stateSlug: string; abbr: string }[];
+  const nearbyCityData = c.nearbyCities.map((name) => {
+    const match = (citiesFullData as CityData[]).find((x) => x.city === name);
+    return {
+      name,
+      slug: match?.slug || name.toLowerCase().replace(/\s+/g, "-"),
+      stateSlug: match?.stateSlug || c.stateSlug,
+      hasPage: match ? publishedSlugs.has(match.slug) : false,
+    };
+  });
 
   return (
     <>
@@ -277,9 +288,13 @@ export default async function CityPage({ params }: Props) {
                   {nearbyCityData.map((nc, i) => (
                     <span key={nc.slug}>
                       {i > 0 && (i === nearbyCityData.length - 1 ? " and " : ", ")}
-                      <Link href={`/generator-installation/${nc.stateSlug}/${nc.slug}`} className={intLink}>
-                        {nc.name}
-                      </Link>
+                      {nc.hasPage ? (
+                        <Link href={`/generator-installation/${nc.stateSlug}/${nc.slug}`} className={intLink}>
+                          {nc.name}
+                        </Link>
+                      ) : (
+                        <span>{nc.name}</span>
+                      )}
                     </span>
                   ))}
                 </>
