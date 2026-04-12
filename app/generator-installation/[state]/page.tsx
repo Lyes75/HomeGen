@@ -337,7 +337,7 @@ export default async function StatePage({ params }: Props) {
             </h2>
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {s.cities.map((cityName) => {
-                const citySlug = cityName.toLowerCase().replace(/\s+/g, "-");
+                const citySlug = cityName.toLowerCase().replace(/[.\s]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
                 const hasPage = publishedCitySlugs.has(citySlug);
                 return hasPage ? (
                   <Link
