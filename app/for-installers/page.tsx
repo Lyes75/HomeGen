@@ -36,10 +36,6 @@ export const metadata: Metadata = {
     url: "https://homegen.co/for-installers",
     type: "website",
   },
-  robots: {
-    index: false,
-    follow: true,
-  },
 };
 
 function FAQItem({ q, a }: { q: string; a: string }) {
